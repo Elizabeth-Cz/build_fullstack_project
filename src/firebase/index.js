@@ -1,5 +1,9 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import {
+  getAuth,
+  createUserWithEmailAndPassword, //sign up
+  signInWithEmailAndPassword, // login
+} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -12,3 +16,11 @@ const firebaseConfig = {
 console.log(firebaseConfig);
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// init auth
+
+const auth = getAuth();
+
+export default app;
+
+export { auth };
